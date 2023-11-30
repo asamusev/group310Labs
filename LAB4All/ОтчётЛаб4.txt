@@ -1,0 +1,91 @@
+Задание 1:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    cout << ((true && true) || false) << endl;
+    cout << ((true && false) || true) << endl;
+    cout << ((true && false) || false || true) << endl;
+    cout << ((5 > 6 || 4 > 3) && (7 > 8)) << endl;
+    cout << (!(7 > 6 || 3 > 4)) << endl;
+}
+
+Задание 2:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    cout << "Через const" << endl;
+    const bool a = true,b = false,c = true,d = false,e = true,f = false;
+
+    cout << ((a && b) || (!d) && (c || e)) << endl;
+    cout << ((b && c) || (a&&d) || (!e)) << endl;
+    cout << ((f || e) && (a || d) && (b || c)) << endl;
+
+    cout << "Через enum" << endl;
+    enum Constants
+    {
+        a1 = 2,
+        b1 = 4,
+        c1 = 1,
+        d1 = 5,
+        e1 = 7,
+        f1 = 3
+    };
+
+    cout << ((a1 > c1) && (b1 < d1) && (e1 != f1)) << endl;
+
+    return 0;
+}
+
+Задание 3:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    bool a = true, b = false;
+
+    if(!(a && b) == ((!a)||(!b)))
+        cout << "1 закон справедлив" << endl;
+    if(!(a || b) == ((!a)&&(!b)))
+        cout << "2 закон справедлив" << endl;
+    return 0;
+}
+
+
+Задание 4:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int x,y,z,v;
+    bool logicValue;
+    cout << "Введите 1 число: ";
+    cin >> x;
+    cout << "Введите 2 число: ";
+    cin >> y;
+    cout << "Введите 3 число: ";
+    cin >> z;
+    cout << "Введите 4 число: ";
+    cin >> v;
+    cout << x << " " << y << " " << z << " " << v << endl;
+    x = 3 + 4 + 5;
+    x = y = z;
+    z *= ++y + 5;
+    cout << x << " " << y << " " << z << " " << v << endl;
+    logicValue = x || y && z || v;
+    cout << logicValue << endl;
+    // Для logicValue = false все переменные должны равняться 0 либо x,y,z = 0, либо y,z,v = 0
+}

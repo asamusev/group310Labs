@@ -1,0 +1,170 @@
+Задание 1:
+Создайте функцию с возвращаемым значением типа double, с параметром типа double
+которая вызывается из главной функции main(), передайте на вход функции параметр,
+который пользователь должен ввести с клавиатуры, вычислите в функции куб числа и
+выведите значение этого числа на экран в основной функции main(), сопровождая
+ввод/вывод на экран соответствующими комментариями.
+В прототипе этой функции определите параметр по умолчанию.
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+double Cube(double a = 2) // Функция возвращаемая куб числа
+{
+    double c = a*a*a;
+    return c; // Возвращение значение переменной
+}
+
+int main()
+{
+    double num, c;
+
+    cout << "Введите число: ";
+    cin >> num; // Ввод значения
+    c = Cube(num); // Присвоение значения возвращаемой функции
+    cout << "Куб числа " << num << " равен " << c << endl; // Вывод ответа
+
+    return 0;
+}
+
+Задание 2:
+Создайте функцию с параметром char, которая вызывается из главной функции main,
+на вход функции передайте значение типа char, которое пользователь вводит с
+клавиатуры. В теле функции сделайте вывод значения на экран: в символьном в
+десятичном виде с необходимыми комментариями. Используйте тип авто где это
+возможно с теми дополнениями спецификатора auto, которые поддерживает стандарт
+С++ 11. 
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+char PrintSymbol(char c) //
+{
+    cout << "Введённый символ: " << c << endl;
+}
+
+int main()
+{
+    char symbol;
+
+    cout << "Введите символ: ";
+    cin >> symbol; // Ввод значения в переменную
+    PrintSymbol(symbol); // Вызов функции
+
+    return 0;
+}
+
+Задание 3:
+Выполните в отдельных функциях инициализацию Сopy initialization (копирующая
+инициализация), Direct initialization (прямая инициализация), Uniform initialization,
+auto следующих типов данных, используйте в объявлении прототипа этих функций
+trailing.
+int iValue
+bool cValue
+char cValue
+long lValue
+И выведите их диапазон в десятичном виде на экран.
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    int a = 5;
+    bool b = false;
+    char c = 'a';
+    long int l = 12;
+
+    auto iValue = a;
+    auto bValue = b;
+    auto cValue = c;
+    long int lValue = l;
+
+    cout << sizeof(iValue) << endl;
+    cout << sizeof(bValue) << endl;
+    cout << sizeof(cValue) << endl;
+    cout << sizeof(lValue) << endl;
+
+    return 0;
+}
+
+Задание 4:
+Объявите глобальную и локальную переменную типа int и с одним и тем же именем,
+выведите на экран консоли глобальную и локальную переменную.
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int A = 5;
+int main()
+{
+    int A = 2;
+    cout << "Глобальная переменная A: " << ::A << endl;
+    cout << "Локальная переменная A: " << A << endl;
+
+    return 0;
+}
+
+Задание 5:
+С какими аргументами можно вызывать данную функцию void printChar(int c=’a’, char
+b=’b’, char c=’c’, char d=’d’); если определены параметры по умолчанию привидите
+все значения вызова функции printChar в main().
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+void PrintChar(int a = 'a', char b = 'b', char c = 'c', char d = 'd') //
+{
+    cout << a << endl;
+    cout << b << endl;
+    cout << c << endl;
+    cout << d << endl;
+}
+
+int main()
+{
+    cout << "Значения по умолчанию:" << endl;
+    PrintChar();
+    cout << "Присвоенные значения:" << endl;
+    PrintChar(2,'b','s','1');
+
+    return 0;
+}
+
+Задание 6:
+Выполните перегрузку функций с двумя параметрами (float, int) которые делают
+вывод: типа данных: int, размер байт. 
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+
+short Size(short a)
+{
+    return sizeof(a);
+}
+int Size(int a)
+{
+    return sizeof(a);
+}
+float Size(float a)
+{
+    return sizeof(a);
+}
+
+int main()
+{
+    short a = 2;
+    int b = 2;
+    float c = 2;
+
+    cout << "Размер short: " << Size(a) << " Байт" << endl;
+    cout << "Размер int: " << Size(b) << " Байт" << endl;
+    cout << "Размер float: " << Size(c) << " Байт" << endl;
+
+    return 0;
+}

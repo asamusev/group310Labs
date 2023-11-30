@@ -1,0 +1,117 @@
+Задание 1:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    cout << "\n\n" << setw(10);
+    cout << "*****" << setw(50) << setfill(' ');
+    cout << "ТУСУР" << setw(50) << setfill(' ');
+    cout << "*****" << endl;
+    cout.setf(ios::right);
+    cout << setw(100) << "Факультет: Доп. Образование" << endl;
+    cout << setw(100) << "Группа: 310" << endl;
+    cout << setw(100) << "Студентка: Д.О. Федорович" << endl;
+    cout << setw(63) << "Братск 2023" << endl;
+
+
+    return 0;
+}
+Задание 2:
+#include <iostream>
+
+using namespace std;
+int main()
+{
+    cout << "bool = "  << sizeof(bool)  << " Байт" << endl;
+    cout << "char = "  << sizeof(char)  << " Байт" << endl;
+    cout << "short = " << sizeof(short) << " Байт" << endl;
+    cout << "int = "   << sizeof(int)   << " Байт" << endl;
+    cout << "float = " << sizeof(float) << " Байт" << endl;
+
+    cout << '\n';
+
+    cout << "short int = "     << sizeof(short int)     << " Байт" << endl;
+    cout << "wchar_t = "       << sizeof(wchar_t)       << " Байт" << endl;
+    cout << "char16_t = "      << sizeof(char16_t)      << " Байт" << endl;
+    cout << "char32_t = "      << sizeof(char32_t)      << " Байт" << endl;
+    cout << "long long int = " << sizeof(long long int) << " Байт" << endl;
+    cout << "long double = "   << sizeof(long double)   << " Байт" << endl;
+
+   return 0;
+}
+Задание 3:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    int a,b,c;
+    cout << "Введите 1 число: ";
+    cin >> a;
+    cout << "Введите 2 число: ";
+    cin >> b;
+    cout << "Введите 3 число: ";
+    cin >> c;
+    cout << '\n';
+    float sr;
+    sr = float(a+b+c)/3;
+    cout << "Среднее арифметическое чисел = " << sr << endl;
+    return 0;
+}
+Задание 4:
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+int main()
+{
+    int s,t,v1,v2,l;
+    float v,a,r;
+    cout << "Вычислить скорость прямолинейного движения:" << endl;
+    cout << "Введите расстояние: ";
+    cin >> s;
+    cout << "Введите время: ";
+    cin >> t;
+    v = float(s)/t;
+    cout << "Скорость = " << v << endl;
+
+    cout << "Вычислить ускорение:" << endl;
+    cout << "Введите начальную скорость: ";
+    cin >> v1;
+    cout << "Введите конечную скорость: ";
+    cin >> v2;
+    cout << "Введите время: ";
+    cin >> t;
+    a = float(v2-v1)/t;
+    cout << "Ускорение = " << a << endl;
+
+    cout << "Вычислить радиус окружности:" << endl;
+    cout << "Введите длину окружности: ";
+    cin >> l;
+    float pi = 3.14f;
+    r = float(l)/(2*pi);
+    cout << "Радиус окружности = " << r << endl;
+    return 0;
+}
+Задание 5:
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    float a = 34.50f;
+    float b = 0.004000f;
+    float c = 123.005f;
+    float d = 146000;
+
+    printf("%e\n",a);
+    printf("%e\n",b);
+    printf("%e\n",c);
+    printf("%e\n",d);
+
+    return 0;
+}

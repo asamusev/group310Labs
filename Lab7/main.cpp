@@ -1,0 +1,222 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <time.h>
+#include <random>
+#include <map>
+
+using namespace std;
+
+void Z1()
+{
+    enum Floors
+    {
+        Parking = 0,
+        Hall = 1,
+        Products = 2,
+        AllSell = 3,
+        FoodCourt = 4,
+        Cinema = 5,
+        Terrarium = 6,
+        Dendrarium = 7
+    };
+
+    int floor;
+    cout << "Введите номер этажа, наа который хотите отправиться 0-7: ";
+    cin >> floor;
+    switch (Floors(floor)) {
+    case 0:
+        cout << "Добро пожаловать на парковку";
+        break;
+    case 1:
+        cout << "Добро пожаловать на холл";
+        break;
+    case 2:
+        cout << "Добро пожаловать на продуктовый этаж";
+        break;
+    case 3:
+        cout << "Добро пожаловать на хозяйственный этаж";
+        break;
+    case 4:
+        cout << "Добро пожаловать на закусочный этаж";
+        break;
+    case 5:
+        cout << "Добро пожаловать на этаж кинотеатра";
+        break;
+    case 6:
+        cout << "Добро пожаловать на террариум";
+        break;
+    case 7:
+        cout << "Добро пожаловать на дендрариум";
+        break;
+    default:
+        break;
+    }
+}
+
+
+enum class Animals
+{
+    Pig = 1,
+    Chicken = 2,
+    Goat = 3,
+    Cat = 4,
+    Dog = 5
+};
+
+string GetAnimalName(Animals animal)
+{
+    switch (animal) {
+    case Animals::Pig:
+        return "Свинка по именни Пеппа";
+        break;
+    case Animals::Chicken:
+        return "Курица по имени Ряба";
+        break;
+    case Animals::Goat:
+        return "Козёл по имени Козёл";
+        break;
+    case Animals::Cat:
+        return "Котёнок по имени Гав";
+        break;
+    case Animals::Dog:
+        return "Собачка по имени Шарик";
+        break;
+    default:
+        return "Такого животного в списке нет";
+        break;
+    }
+}
+
+void Z2()
+{
+    int animal;
+    cin >> animal;
+    cout << GetAnimalName(Animals(animal)) << endl;
+}
+
+
+void Z3()
+{
+    auto m = 300;
+    float FX = 300.600006;
+    char cht = 'z';
+
+    cout << "Использование оператора &" << endl;
+    cout << "адрес m" << " = " << &m << endl;
+    cout << "адрес FX" << " = " << &FX << endl;
+    cout << "адрес cht" << " = " << &cht << endl;
+    cout << "-------------------------\n" << endl;
+
+    cout << "Использование оператора * и &" << endl;
+    cout << "значение по адресу m" << " = " << *&m << endl;
+    cout << "значение по адресу FX" << " = " << *&FX << endl;
+    cout << "значение по адресу cht" << " = " << *&cht << endl;
+    cout << "-------------------------\n" << endl;
+
+    auto *M = &m;
+    float *fx = &FX;
+    char *C = &cht;
+    cout << "Использование только переменную указателя" << endl;
+    cout << "адрес m" << " = " << M << endl;
+    cout << "адрес FX" << " = " << fx << endl;
+    cout << "адрес cht" << " = " << C << endl;
+    cout << "-------------------------\n" << endl;
+
+    cout << "Использование только оператора указателя" << endl;
+    cout << "адрес m" << " = " << *M << endl;
+    cout << "адрес FX" << " = " << *fx << endl;
+    cout << "адрес cht" << " = " << *C << endl;
+}
+
+void Z4()
+{
+    srand(time(NULL));
+    int n;
+    cout << "Введите кол-во эл-ов массива: ";
+    cin >> n;
+    int M[n];
+
+    for(int x = 0; x < n; x++)
+    {
+        M[x] = rand() % 10 + 1;
+    }
+
+    int *i = M;
+    cout << "Вывод без указателя: " << endl;
+    for(int x = 0; x < n; x++)
+    {
+        cout << i++ << " ";
+    }
+    int *j = M;
+    cout << '\n';
+    cout << "Вывод с указателем: " << endl;
+    for(int x = 0; x < n; x++)
+    {
+        cout << *j++ << " ";
+    }
+    cout << '\n';
+}
+
+void Z5()
+{
+    string eng = "UVWN";
+    string &e = eng;
+    int count = 0;
+    for(char c: e) {
+        for(char c2: e) {
+            for(char c3: e) {
+                string word;
+                word += c;
+                word += c2;
+                word += c3;
+                if(c != c2 && c != c3 && c2 != c3)
+                {
+                    cout << c << c2 << c3 << endl;
+                    count++;
+                }
+            }
+        }
+    }
+    cout << "Всего перестановок \nможно сделать: " << count << endl;
+}
+
+//Для задания 6.
+void ANDORXOR(int a, int b)
+{
+    bool and1;
+    bool or1;
+    bool xor1;
+
+    int and2;
+    int or2;
+    int xor2;
+
+    and1 = a&&b;
+    or1 = a||b;
+    xor1 = a^b;
+
+    and2 = a&&b;
+    or2 = a||b;
+    xor2 = a^b;
+
+    cout << "булевые результаты" << endl;
+    cout << "a and b: " << and1 << endl;
+    cout << "a or b: " << or1 << endl;
+    cout << "a xor b: " << xor1 << endl;
+
+    cout << "числовые результаты" << endl;
+    cout << "a and b: " << and2 << endl;
+    cout << "a or b: " << or2 << endl;
+    cout << "a xor b: " << xor2 << endl;
+}
+
+void Z6()
+{
+    ANDORXOR(0,5);
+}
+
+int main()
+{
+
+}

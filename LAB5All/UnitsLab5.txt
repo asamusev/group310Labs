@@ -1,0 +1,127 @@
+//Unit_1
+#define Average(a,b)((a+b)/2)
+
+int Min(int a, int b)
+{
+    if(a < b)
+        return a;
+    else
+        return b;
+}
+
+int Max(int a, int b)
+{
+    if(a > b)
+        return a;
+    else
+        return b;
+}
+
+//Unit_2
+float CM(int mm)
+{
+    float ans = (float)mm / 10;
+    return ans;
+}
+float M(int mm)
+{
+    float ans = (float)mm / 1000;
+    return ans;
+}
+
+//Unit_3
+int IntCast(int x, float y, double z, unsigned short k)
+{
+    int i = (x+(int)y)*(int)z+(int)k;
+    return i;
+}
+unsigned int UnIntCast(int x, float y, double z, unsigned short k)
+{
+    unsigned int ui = (unsigned int)x/(unsigned int)y +(unsigned int)k;
+    return ui;
+}
+short FloatCast(int x, float y, double z, unsigned short k)
+{
+    short s = (short)x%((short)x/(short)y);
+    return s;
+}
+double DoubleCast(int x, float y, double z, unsigned short k)
+{
+    int z1 = (double)x*(double)y+z/(double)x;
+    return z1;
+}
+unsigned short ShortCast(int x, float y, double z, unsigned short k)
+{
+    unsigned short k1 = (short)x-(short)y/(short)z/y;
+    return k1;
+}
+
+//Unit_4
+int Sum(int a, int b)
+{
+    return a + b;
+}
+float Sum(float a, float b)
+{
+    return a + b;
+}
+float Sum(int a, float b)
+{
+    return (float)a + b;
+}
+float Sum(float a, int b)
+{
+    return a + (float)b;
+}
+
+int Minus(int a, int b)
+{
+    return a - b;
+}
+float Minus(float a, float b)
+{
+    return a - b;
+}
+float Minus(int a, float b)
+{
+    return (float)a - b;
+}
+float Minus(float a, int b)
+{
+    return a - (float)b;
+}
+
+int Prz(int a, int b)
+{
+    return a * b;
+}
+float Prz(float a, float b)
+{
+    return a * b;
+}
+float Prz(int a, float b)
+{
+    return (float)a * b;
+}
+float Prz(float a, int b)
+{
+    return a * (float)b;
+}
+
+int Del(int a, int b)
+{
+    return a / b;
+}
+float Del(float a, float b)
+{
+    return a / b;
+}
+float Del(int a, float b)
+{
+    return (float)a / b;
+}
+float Del(float a, int b)
+{
+    return a / (float)b;
+}
+

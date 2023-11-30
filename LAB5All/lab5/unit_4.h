@@ -1,0 +1,16 @@
+int Sum(int a, int b);
+float Sum(float a, float b);
+float Sum(int a, float b);
+float Sum(float a, int b);
+int Minus(int a, int b);
+float Minus(float a, float b);
+float Minus(int a, float b);
+float Minus(float a, int b);
+int Prz(int a, int b);
+float Prz(float a, float b);
+float Prz(int a, float b);
+float Prz(float a, int b);
+int Del(int a, int b);
+float Del(float a, float b);
+float Del(int a, float b);
+float Del(float a, int b);
